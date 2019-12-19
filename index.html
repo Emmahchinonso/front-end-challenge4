@@ -10,7 +10,11 @@
 			type="image/png"
 			sizes="32x32"
 			href="./images/favicon-32x32.png"
-		/>
+        />
+        
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
+
 
 		<link rel="stylesheet" href="css/style.css" />
 
@@ -18,20 +22,22 @@
 	</head>
 	<body>
 		<div class="container">
-			<article>
+			<article class="article">
 				<h1>Ping<span class="colored-blue">.</span></h1>
 				<h3>We are launching <strong>soon!</strong></h3>
 				<p>Subscribe and get notified</p>
-				<form action="#">
-					<label for="email">
+				<form action="#" class="form-wrapper">
+					<label for="email" >
 						<input
 							type="email"
 							name="email"
-							id="email"
-							placeholder="your email address"
+                            id="email"
+                            class="form-control input"
+                            placeholder="Your email address"
+                            required
 						/>
 					</label>
-					<input type="submit" value="Notify Me" />
+					<input type="submit" class="form-control button" value="Notify Me" />
 				</form>
 
 				<figure>
@@ -44,7 +50,13 @@
 				</figure>
 
 				<footer class="footer">
-					<div class="footer__icons"></div>
+					<div class="footer__icons">
+                        <ul class="">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
 					<div class="copyright">
 						<p>&copy; Copyright Ping. All rights reserved.</p>
 					</div>
