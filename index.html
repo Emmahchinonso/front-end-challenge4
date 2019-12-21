@@ -10,13 +10,21 @@
 			type="image/png"
 			sizes="32x32"
 			href="./images/favicon-32x32.png"
-        />
-        
-        <!-- Google fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
+		/>
 
+		<!-- Google fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap"
+			rel="stylesheet"
+		/>
 
 		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Font awesome-->
+		<script
+			src="https://kit.fontawesome.com/e2335626de.js"
+			crossorigin="anonymous"
+		></script>
 
 		<title>Frontend Mentor | Ping coming soon page</title>
 	</head>
@@ -26,18 +34,21 @@
 				<h1>Ping<span class="colored-blue">.</span></h1>
 				<h3>We are launching <strong>soon!</strong></h3>
 				<p>Subscribe and get notified</p>
-				<form action="#" class="form-wrapper">
-					<label for="email" >
-						<input
+				<form action="#" class="form-wrapper" novalidate>
+					<label for="email" style="width: 0px;"></label>
+					<div class="form-row">
+                        <input
+                            pattern="\b[\w\.-]+@?[\w\.-]+\.\w{2,4}\b"
 							type="email"
 							name="email"
-                            id="email"
-                            class="form-control input"
-                            placeholder="Your email address"
-                            required
+							id="email"
+							class="form-control input"
+							placeholder="Your email address"
+							required
 						/>
-					</label>
-					<input type="submit" class="form-control button" value="Notify Me" />
+						<span class="error-text"></span>
+					</div>
+					<button type="submit" class="form-control button">Notify Me</button>
 				</form>
 
 				<figure>
@@ -51,25 +62,27 @@
 
 				<footer class="footer">
 					<div class="footer__icons">
-                        <ul class="">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
+						<ul class="icons-list">
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</div>
 					<div class="copyright">
 						<p>&copy; Copyright Ping. All rights reserved.</p>
 					</div>
 				</footer>
 			</article>
 		</div>
-		<footer>
+		<footer class="outer-footer">
 			<p class="attribution">
 				Challenge by
 				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 					>Frontend Mentor</a
-				>. Coded by <a href="#">Your Name Here</a>.
+				>. Coded by <a href="#">Chinonso Emmanuel</a>.
 			</p>
 		</footer>
-	</body>
+
+		<script src="js/main.js"></script>
+    </body>
 </html>

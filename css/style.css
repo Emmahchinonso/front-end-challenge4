@@ -15,7 +15,7 @@
 html,
 body {
 	font-family: "Libre Franklin", sans-serif;
-	padding: 0 1rem;
+	/* padding: 0 .5rem; */
 }
 
 img {
@@ -64,20 +64,36 @@ h1 {
 }
 
 .form-wrapper label {
-	width: 65%;
+    width: 0;
+    height: 0;
 }
 
 .form-wrapper {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
 	text-align: left;
 	margin-bottom: 5rem;
 }
 
+.form-wrapper .form-row{
+    position: relative;
+    width: 64%;
+}
 
+.form-wrapper .form-control.error{
+    border-color:  var(--secondary-color-2);
+}
 
+.error-text{
+    display: none;
+    color: var(--secondary-color-2);
+    font-style: italic;
+    position: absolute;
+   bottom: -20px;
+   left: 10px;
+}
 
 .form-control {
 	padding: 1rem;
@@ -90,7 +106,7 @@ h1 {
 .form-control.input {
 	width: 100%;
 	padding-left: 2rem;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color-1);
 	outline: none;
 }
 
@@ -99,7 +115,7 @@ h1 {
 }
 
 .form-control.input::placeholder {
-	color: var(--primary-color);
+	color: var(--secondary-color-1);
 }
 
 .button {
@@ -107,7 +123,8 @@ h1 {
 	background: var(--primary-color);
 	color: #fff;
 	transition: box-shadow 0.5s ease;
-	cursor: pointer;
+    cursor: pointer;
+    transition: margin .3s ease;
 }
 
 .button:hover {
@@ -118,36 +135,140 @@ h1 {
 	outline: 2px dotted var(--primary-color);
 }
 
+.article figure{
+    margin-bottom: 7rem;
+}
+
+   /* Article Footer */
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer__icons{
+    margin-bottom: 2rem;
+    width: 30%;
+}
+
+.footer .icons-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.foooter .icons-list a{
+    text-decoration: none;
+}
+
+
+.footer .icons-list i{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    padding: .8rem;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    transition: .5s ease;
+}
+
+.footer .icons-list li:first-child i{
+    padding: .8rem .9rem;
+} 
+
+.footer .icons-list i:hover{
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.footer .copyright p{
+    color: var(--neutral-color-1);
+}
+
+/* outer footer */
+.outer-footer{
+    background: var(--primary-color);
+    padding: 2rem;
+    width: 100%;
+}
+
+
 .attribution {
-	font-size: 11px;
+    color: #eee;
+	font-size: 16px;
 	text-align: center;
 }
 .attribution a {
-	color: hsl(228, 45%, 44%);
+	color: #fff;
 }
 
     /* Media queries*/
 @media (max-width: 431px){
+
     .form-wrapper{
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         margin-bottom: 3rem;
     }
 
-    .form-wrapper label{
+    .form-wrapper .form-row{
         width: 90%;
     }
 
     .form-wrapper .button{
         width: 90%;
-        margin-top: 2.5rem;
+        margin-top: 1rem;
     }
-    
+
+    .form-row .error-text{
+        margin: 0 0 3rem 3rem;
+        font-size: 14px;
+        top: 120%;
+        left: 1.5rem;
+    }
+
+    .form-wrapper .btn-error{
+        margin-top: 3.5rem;
+    }
+
+    .form-row .form-control.error{
+        margin-bottom: .3rem;
+    }
+
     h1{
         margin: 5rem 0 2rem;
     }
 
     .article p{
         margin: 2rem 0;
+    }
+
+    .footer .footer__icons{
+        margin-top: 3rem;
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .footer .icons-list i{
+        font-size: 1rem;
+    }
+    .copyright{
+        font-size: .8rem;
+    }
+}
+
+@media(max-width: 636px){
+    .footer .footer__icons{
+        width: 50%;
+    }
+}
+
+@media(max-width: 728px){
+    .container{
+        padding: 0 .8rem;
     }
 }
